@@ -2733,7 +2733,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c18886b1617e2a42944965bd56b3a1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveType: 0
   lookAtSpeed: 15
+  addRunSpeed: 5
   isDebug: 0
   attackRadiusColor: {r: 1, g: 0, b: 0, a: 0.5}
 --- !u!4 &1141960148210212252
@@ -5744,11 +5746,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7443523389791823695}
   - component: {fileID: 9009903513667593033}
+  - component: {fileID: 563505998413311846}
   - component: {fileID: 272410613183601348}
   - component: {fileID: 1129512230393331482}
   - component: {fileID: 8828614723314621136}
   - component: {fileID: 2994645355053869247}
-  - component: {fileID: 563505998413311846}
   m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
@@ -17625,7 +17627,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponBase: {fileID: 1173410861472793728}
-  speed: 3
   shield: 5
   damage: 5
   attackDistance: 10
