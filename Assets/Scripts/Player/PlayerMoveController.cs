@@ -14,6 +14,8 @@ public class PlayerMoveController : PlayerBase
     [SerializeField] internal float lookAtSpeed = 15f;
     [SerializeField] internal float addRunSpeed = 5f;
     
+    private bool moveHold = false;
+    
     internal enum MoveType
     {
         Absolute,
@@ -73,7 +75,14 @@ public class PlayerMoveController : PlayerBase
     
     private void Update()
     {
+        if(moveHold) { return; }
+        
         curMove.Move();
+    }
+    
+    internal void MoveHold(bool value)
+    {
+        moveHold = value;
     }
     
     private void InputMovePerformed(Vector2 position, float time)
