@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
-public class SerializeDictionary<K, V> : Dictionary<K, V>, ISerializationCallbackReceiver
+public class SerializeDictionary<TKey, TValue> : Dictionary<TKey, TValue>, ISerializationCallbackReceiver
 {
     [SerializeField]
     private DataType[] dicData;
@@ -11,8 +11,8 @@ public class SerializeDictionary<K, V> : Dictionary<K, V>, ISerializationCallbac
     [Serializable]
     public struct DataType
     {
-        public K key;
-        public V value;
+        public TKey key;
+        public TValue value;
     }
 
     public void OnBeforeSerialize()
@@ -49,4 +49,13 @@ public class SerializeDictionary<K, V> : Dictionary<K, V>, ISerializationCallbac
             };
         }
     }
+    
+    public SerializeDictionary() { }
+    public SerializeDictionary(IDictionary<TKey, TValue> dictionary) : base(dictionary) { }
+    public SerializeDictionary(IDictionary<TKey, TValue> dictionary, IEqualityComparer<TKey> comparer) : base(dictionary) { }
+    public SerializeDictionary(IEnumerable<KeyValuePair<TKey, TValue>> collection) : base(collection) { }
+    public SerializeDictionary(IEnumerable<KeyValuePair<TKey, TValue>> collection, IEqualityComparer<TKey> comparer) : base(collection, comparer) { }
+    public SerializeDictionary(IEqualityComparer<TKey> comparer) : base(comparer) { }
+    public SerializeDictionary(int capacity) : base(capacity) { }
+    public SerializeDictionary(int capacity, IEqualityComparer<TKey> comparer) : base(capacity, comparer) { }
 }
