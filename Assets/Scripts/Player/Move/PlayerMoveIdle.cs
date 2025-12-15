@@ -5,12 +5,14 @@ public class PlayerMoveIdle : PlayerMove
     {
         
     }
-    
+
+    public override void OnEnter() { }
+
     public override void Move()
     {
-        playerMoveController.playerState = PlayerState.Idle;
-        
         playerAnimationController.RunEnd();
         playerAnimationController.AttackEnd();
     }
+
+    public override void OnExit() { }
 }
