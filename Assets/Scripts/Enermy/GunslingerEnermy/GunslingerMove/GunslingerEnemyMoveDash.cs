@@ -6,11 +6,15 @@ public class GunslingerEnemyMoveDash : EnemyMove
     
     public GunslingerEnemyMoveDash(EnemyBase enemyBase) : base(enemyBase)
     {
-        this.enemy = enemyBase as GunslingerEnemy;
+        enemy = enemyBase as GunslingerEnemy;
     }
+
+    public override void OnEnter() { }
 
     public override void Move()
     {
         
     }
+
+    public override void OnExit() { }
 }

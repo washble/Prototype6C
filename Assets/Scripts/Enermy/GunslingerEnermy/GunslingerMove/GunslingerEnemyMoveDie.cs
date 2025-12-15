@@ -9,15 +9,17 @@ public class GunslingerEnemyMoveDie : EnemyMove
         this.enemy = enemyBase as GunslingerEnemy;
     }
 
+    public override void OnEnter() { }
+
     public override void Move()
     {
         Die();
     }
 
+    public override void OnExit() { }
+
     private void Die()
     {
-        enemy.EState = EnemyState.Die;
-        
         // Temp Setting
         enemy.gameObject.SetActive(false);
     }
