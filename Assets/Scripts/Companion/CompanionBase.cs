@@ -23,7 +23,7 @@ public abstract class CompanionBase : MonoBehaviour
     internal WeaponBase Cweapon => weaponBase;
     
     // =========== Component =========== //
-    protected CompanionMove CurMove;
+    protected IMove curMove;
     
     private Transform target;
     protected Transform CTarget => target;
@@ -34,8 +34,6 @@ public abstract class CompanionBase : MonoBehaviour
     private NavMeshAgent navMeshAgent;
     protected NavMeshAgent CNavMeshAgent => navMeshAgent;
 
-    internal CompanionState CState;
-        
     protected virtual void Awake()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
@@ -53,7 +51,7 @@ public abstract class CompanionBase : MonoBehaviour
     
     protected virtual void Update()
     {
-        CurMove.Move();
+        curMove.Move();
     }
 
     private void InitSettings()
@@ -167,12 +165,4 @@ public abstract class CompanionBase : MonoBehaviour
     {
         return Vector3.SqrMagnitude(vector1 - vector2) < distance * distance;
     }
-}
-
-public enum CompanionState
-{
-    Idle,
-    Attack,
-    Move,
-    Die,
 }
