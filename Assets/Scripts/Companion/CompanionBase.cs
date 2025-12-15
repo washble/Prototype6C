@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.Serialization;
 
 [DisallowMultipleComponent]
 [RequireComponent(typeof(NavMeshAgent))]
@@ -17,7 +16,6 @@ public abstract class CompanionBase : MonoBehaviour
     [SerializeField] private float attackDistance = 5;
     [SerializeField] private float lookAtSpeed = 2f;
 
-    [FormerlySerializedAs("weapon")]
     [Header("[Weapon]")]
     [SerializeField] private WeaponBase weaponBase;
     internal WeaponBase Cweapon => weaponBase;
